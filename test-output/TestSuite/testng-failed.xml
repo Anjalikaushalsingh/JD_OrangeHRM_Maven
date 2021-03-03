@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]" parallel="tests">
+  <test thread-count="2" name="IETest(failed)" parallel="tests">
+    <parameter name="browser" value="ie"/>
+    <classes>
+      <class name="com.OrangeHRM.CrossBrowser_Testing">
+        <methods>
+          <include name="LaunchBrowser"/>
+          <include name="CloseBrowser"/>
+          <include name="OrangeHRM_Login" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- com.OrangeHRM.CrossBrowser_Testing -->
+    </classes>
+  </test> <!-- IETest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->
