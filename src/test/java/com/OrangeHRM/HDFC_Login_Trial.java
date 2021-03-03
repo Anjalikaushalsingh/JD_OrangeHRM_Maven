@@ -14,25 +14,35 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 
 public class HDFC_Login_Trial {
-	ChromeDriver driver;
+	EdgeDriver driver;
 	 WebDriverWait wait;
 	
 	@Test
 	  public void beforeTest() throws InterruptedException {
 		
 			
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new  ChromeOptions();
+//			WebDriverManager.chromedriver().setup();
+//			ChromeOptions options = new  ChromeOptions();
 //			options.setHeadless(true); // behave as headless
-			options.setHeadless(false); // behave as head
+//			options.setHeadless(false); // behave as head
 			// ChromeDriver driver = new ChromeDriver();
-			driver = new ChromeDriver(options);
-			wait = new WebDriverWait(driver, 60);
+//			driver = new ChromeDriver(options);
+//			wait = new WebDriverWait(driver, 60);
+			
+			
+			WebDriverManager.edgedriver().setup();
+			EdgeOptions options = new EdgeOptions();
+			driver = new EdgeDriver(options);
+					wait = new WebDriverWait(driver, 60);
+			
+			
 			driver.manage().window().maximize();
 			driver.navigate().to("https://netbanking.hdfcbank.com/netbanking/");
 			
@@ -81,7 +91,7 @@ public class HDFC_Login_Trial {
 	  
   }
 
-//  @AfterTest
+  @AfterTest
   public void afterTest() {
 	  driver.close();
   }

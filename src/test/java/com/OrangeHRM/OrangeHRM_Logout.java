@@ -1,19 +1,24 @@
 package com.OrangeHRM;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+//import org.junit.After;
+//import org.junit.Before;
+//import org.junit.After;
+//import org.junit.Before;
+//import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class OrangeHRM_Logout {
 	WebDriver driver;
 
-	@Before
+	@BeforeClass
 	public void LaunchBrowser() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
@@ -24,7 +29,7 @@ public class OrangeHRM_Logout {
 		Thread.sleep(5000);
 	}
 
-	@After
+	@AfterClass
 	public void CloseBrowser() {
 		driver.close();
 	}
